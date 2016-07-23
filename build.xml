@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="BlancoApexEditor" default="build" basedir=".">
+	<property name="version" value="0.6.0" />
+
+	<property name="product" value="blanco.plugin.apexeditor" />
+	<property name="project.zip" value="${product}_${version}-src.zip" />
+	<property name="project.plugin.jar" value="${product}_${version}.jar" />
+
+	<property name="eclipse.dir" value="/home/tosiki/apps/eclipse.committers/eclipse" />
+
+	<target name="build" depends="compile,build-plugin,pack" />
+
+	<target name="pack">
+		<echo>packing project</echo>
+		<delete file="${project.zip}" />
+
+		<delete dir="javadoc" />
+		<delete dir="tmp" />
+		<mkdir dir="tmp" />
+
+		<zip destfile="${project.zip}">
+			<zipfileset dir="." prefix="blancoApexEditor" excludes="${project.plugin.jar},${project.zip},**/*.class" />
+		</zip>
+	</target>
+
+	<target name="build-plugin">
+		<echo>build plug-in jar</echo>
+
+		<delete file="${project.plugin.jar}" />
+		<jar destfile="${project.plugin.jar}" manifest="META-INF/MANIFEST.MF">
+			<manifest>
+				<attribute name="Bundle-Version" value="${version}" />
+			</manifest>
+			<zipfileset dir="icons" prefix="icons" />
+			<zipfileset dir="src" prefix="src" />
+			<zipfileset dir="bin" includes="**/*" />
+			<zipfileset dir="." includes="plugin.xml" />
+			<zipfileset dir="." includes="about.html" />
+		</jar>
+	</target>
+
+	<target name="compile">
+		<delete dir="bin" />
+		<mkdir dir="bin" />
+		<javac srcdir="src/" destdir="bin" debug="true" source="1.6" target="1.6" fork="true">
+			<classpath>
+				<fileset dir="${eclipse.dir}/plugins" includes="org.eclipse.*.jar" />
+				<pathelement path="${eclipse.dir}/plugins/org.junit_3.8.1/junit.jar" />
+			</classpath>
+			<include name="**/*.java" />
+		</javac>
+	</target>
+</project>

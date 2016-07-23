@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: BlancoApexEditor
+Bundle-SymbolicName: blancoApexEditor2;singleton:=true
+Bundle-Version: 0.6.0.v20160723a
+Bundle-Vendor: Igapyon
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.ui,
+ org.eclipse.jface.text,
+ org.eclipse.ui.editors
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
