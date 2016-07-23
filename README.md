@@ -5,11 +5,17 @@ blancoApexEditor is written in Java. blancoApexEditor is provided as an OSS prod
 
 ## install
 
+### getting jar
+
 Download blanco.plugin.apexeditor_x.x.x.jar from link below:
 
 - https://github.com/igapyon/blancoApexEditor/tree/v0.6
 
-### source distribution
+### install
+
+put jar in eclipse/dropins
+
+## source
 
 * https://github.com/igapyon/blancoApexEditor/releases 
 
