@@ -1,6 +1,6 @@
 # blancoApexEditor
 
-blancoApexEditor is a Apax language source code editor.
+blancoApexEditor is a Apax language source code editor for Eclipse.
 blancoApexEditor is written in Java. blancoApexEditor is provided as an OSS product.
 
 ## install
