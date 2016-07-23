@@ -13,7 +13,8 @@ Download blanco.plugin.apexeditor_x.x.x.jar from link below:
 
 ### install
 
-put jar in eclipse/dropins
+- put blanco.plugin.apexeditor_x.x.x.jar into eclipse/dropins
+- start/restart Eclipse
 
 ## source
 
